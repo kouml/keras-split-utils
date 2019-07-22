@@ -1,4 +1,4 @@
-# keras-train-validation-split
+# keras-split-utils
 This is a simple keras train validation split utility.(`split_utils.py`)  
 It can useful for `keras.preprocessing.image.ImageDataGenerator` and `flow_from_directory`.
 
