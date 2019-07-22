@@ -18,7 +18,7 @@ original_dir = './data/'
 batch_size = 32
 validation_split = 0.1
 
-# all data in train_dir which are alias to original_data.(both dir is temporary directory)
+# all data in train_dir and val_dir which are alias to original_data. (both dir is temporary directory)
 # don't clear base_dir, because this directory holds on temp directory.
 base_dir, train_dir, val_dir = split_utils.train_valid_split(original_dir, validation_split, seed=1)
 
