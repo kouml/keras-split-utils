@@ -31,7 +31,7 @@ train_datagen = ImageDataGenerator(
 
 train_gen = train_datagen.flow_from_directory(
     train_dir,
-    target_size=shapes,
+    target_size=(28, 28),
     batch_size=batch_size,
     color_mode='grayscale'
 )
@@ -41,7 +41,7 @@ val_datagen = ImageDataGenerator(rescale=1./255)
 
 val_gen = val_datagen.flow_from_directory(
     val_dir,
-    target_size=shapes,
+    target_size=(28, 28),
     batch_size=batch_size,
     color_mode='grayscale'
     )
