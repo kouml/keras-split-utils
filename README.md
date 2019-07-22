@@ -3,8 +3,14 @@ This is a simple keras train validation split utility.(`split_utils.py`)
 It can useful for `keras.preprocessing.image.ImageDataGenerator` and `flow_from_directory`.
 
 ## usage:
-1. copy `split_utils.py` to your directory
-2. you can use `train_valid_split()` like the following snippet.(with import `split_utils`)
+1. clone and copy `split_utils.py` to your directory
+
+``` bash
+$ git clone git@github.com:kouml/keras-split-utils.git
+$ cp keras-split-utils/split_utils.py <your directory>
+```
+
+2. you can use `train_valid_split()` like the following snippet.
 
 ``` python
 import split_utils
@@ -44,3 +50,6 @@ print('the ratio of validation_split is {}'.format(validation_split))
 print('the size of train_dir is {}'.format(train_gen.n))
 print('the size of val_dir is {}'.format(val_gen.n))
 ```
+
+## Etc
+`example.py` is a simple example training/validation code with mnist dataset.
