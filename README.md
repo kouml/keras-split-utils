@@ -1,8 +1,17 @@
 # keras-split-utils
-This is a simple keras train validation split utility.(`split_utils.py`)  
-It can useful for `keras.preprocessing.image.ImageDataGenerator` and `flow_from_directory`.
+This is a simple tensorflow/keras train validation split utility.(`split_utils.py`)
+It can be useful for `tensorflow.keras.preprocessing.image.ImageDataGenerator` and `flow_from_directory`. **It is used for getting different data augmentation parameters for training and validation.**
 
-## usage:
+## requirements
+This repo is tested on Python 3.8+, and TensorFlow 2.2.0.
+
+``` bash
+TensorFlow <= 2.2.x
+Python <= 3.8.x
+pillow <= 7.1.x
+```
+
+## usage
 1. clone and copy `split_utils.py` to your directory
 
 ``` bash
@@ -14,6 +23,8 @@ $ cp keras-split-utils/split_utils.py <your directory>
 
 ``` python
 import split_utils
+
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 original_dir = './data/'
 batch_size = 32
 validation_split = 0.1
@@ -27,7 +38,8 @@ train_datagen = ImageDataGenerator(
     rescale=1./255,
     shear_range=0.2,
     zoom_range=0.2,
-    horizontal_flip=True)
+    horizontal_flip=True
+)
 
 train_gen = train_datagen.flow_from_directory(
     train_dir,
@@ -44,12 +56,16 @@ val_gen = val_datagen.flow_from_directory(
     target_size=(28, 28),
     batch_size=batch_size,
     color_mode='grayscale'
-    )
+)
 
 print('the ratio of validation_split is {}'.format(validation_split))
 print('the size of train_dir is {}'.format(train_gen.n))
 print('the size of val_dir is {}'.format(val_gen.n))
 ```
 
-## Etc
+## example
 `example.py` is a simple example training/validation code with mnist dataset.
+
+``` bash
+$ python example.py
+```
